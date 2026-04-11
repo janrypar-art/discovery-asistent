@@ -7,33 +7,19 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
-    /* Four Bros Brand Colors */
-    --ink: #194669;         /* Four Bros Navy */
-    --ink2: #1A3A5C;        /* Navy dark */
-    --muted: #5A7A9A;       /* Navy muted */
-    --line: #DDE6EF;        /* Light border */
-    --bg: #F7F8FE;          /* Alice Blue */
-    --white: #ffffff;       /* Pure White */
-    --accent: #194669;      /* Navy as primary accent */
-    --accent2: #EEF3F8;     /* Light navy bg */
-    --green: #0f9e6e;       /* Green for positive */
-    --green-bg: #e8f8f2;    /* Light green bg */
-    --amber: #c47a15;       /* Amber for warnings */
-    --amber-bg: #fdf3e3;    /* Light amber bg */
-    --red: #C0392B;         /* Keep red for errors/problems */
-    --red-bg: #FDEDF0;
-    --purple: #7E17E0;      /* Electric Violet */
-    --purple-bg: #F3EEFF;
-    --radius: 10px;
-    --shadow: 0 2px 16px rgba(25,70,105,0.08);
+    --ink: #1a1a2e; --ink2: #2d2d4a; --muted: #6b6b8a; --line: #e2e2ee;
+    --bg: #f7f7fc; --white: #ffffff; --accent: #3d5af1; --accent2: #e8ecff;
+    --green: #0f9e6e; --green-bg: #e8f8f2; --amber: #c47a15; --amber-bg: #fdf3e3;
+    --red: #c4394a; --red-bg: #fdedf0; --purple: #7c3aed; --purple-bg: #f3f0ff;
+    --radius: 12px; --shadow: 0 2px 16px rgba(30,30,60,0.08);
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--ink); min-height: 100vh; font-size: 15px; line-height: 1.6; }
 
-  header { background: #194669; padding: 18px 40px; display: flex; align-items: center; gap: 16px; border-bottom: 3px solid #7E17E0; }
+  header { background: var(--ink); padding: 20px 40px; display: flex; align-items: center; gap: 16px; }
   header h1 { font-family: 'DM Serif Display', serif; color: var(--white); font-size: 22px; font-weight: 400; letter-spacing: -0.3px; }
   header span { font-size: 12px; color: rgba(255,255,255,0.4); font-weight: 300; margin-left: auto; }
-  .dot { width: 8px; height: 8px; background: #7E17E0; border-radius: 50%; flex-shrink: 0; }
+  .dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; flex-shrink: 0; }
 
   /* Tabs */
   .tab-bar {
@@ -57,10 +43,10 @@
     user-select: none;
   }
   .tab:hover { color: var(--ink); }
-  .tab.active { color: #194669; border-bottom-color: #194669; }
+  .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
   .tab-badge {
-    background: #F3EEFF;
-    color: #7E17E0;
+    background: var(--accent2);
+    color: var(--accent);
     font-size: 11px;
     font-weight: 500;
     padding: 2px 7px;
@@ -77,7 +63,7 @@
   /* Cards */
   .card { background: var(--white); border-radius: var(--radius); border: 1px solid var(--line); box-shadow: var(--shadow); overflow: hidden; margin-bottom: 16px; }
   .card-header { padding: 14px 20px; border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 10px; cursor: pointer; user-select: none; }
-  .card-header h2 { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 600; color: var(--ink); flex: 1; letter-spacing: 0.6px; }
+  .card-header h2 { font-family: 'DM Serif Display', serif; font-size: 15px; font-weight: 400; color: var(--ink); flex: 1; }
   .card-header .framework { font-size: 11px; color: var(--muted); font-style: italic; }
   .card-toggle { font-size: 14px; color: var(--muted); transition: transform 0.2s; }
   .card.collapsed .card-toggle { transform: rotate(-90deg); }
@@ -114,8 +100,8 @@
     user-select: none;
     transition: all 0.12s;
   }
-  .pill:hover { border-color: #194669; color: #194669; background: #EEF3F8; }
-  .pill.on { background: #194669; border-color: #194669; color: white; font-weight: 500; }
+  .pill:hover { border-color: var(--accent); color: var(--accent); background: var(--accent2); }
+  .pill.on { background: var(--accent); border-color: var(--accent); color: white; font-weight: 500; }
   .pill.on-green { background: var(--green); border-color: var(--green); color: white; font-weight: 500; }
   .pill.on-amber { background: var(--amber); border-color: var(--amber); color: white; font-weight: 500; }
 
@@ -132,7 +118,7 @@
     outline: none;
     transition: border-color 0.15s;
   }
-  .q-input:focus { border-color: #194669; background: var(--white); }
+  .q-input:focus { border-color: var(--accent); background: var(--white); }
   .q-input::placeholder { color: var(--muted); }
   textarea.q-input { resize: vertical; min-height: 64px; line-height: 1.5; }
 
@@ -143,7 +129,7 @@
   .transcript-block { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--bg); transition: border-color 0.15s; }
   .transcript-block:focus-within { border-color: var(--accent); }
   .transcript-block-header { padding: 10px 14px; background: var(--white); border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 10px; }
-  .transcript-num { width: 22px; height: 22px; background: #194669; color: white; border-radius: 50%; font-size: 11px; font-weight: 500; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .transcript-num { width: 22px; height: 22px; background: var(--accent); color: white; border-radius: 50%; font-size: 11px; font-weight: 500; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
   .transcript-label input { border: none; background: transparent; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; color: var(--ink2); outline: none; flex: 1; min-width: 0; }
   .transcript-label input::placeholder { color: var(--muted); font-weight: 400; }
   .transcript-label { flex: 1; min-width: 0; }
@@ -160,15 +146,15 @@
   .transcript-footer { padding: 6px 14px; border-top: 1px solid var(--line); background: var(--white); }
   .transcript-footer span { font-size: 11px; color: var(--muted); }
   .add-transcript-btn { width: 100%; padding: 12px; background: transparent; border: 2px dashed var(--line); border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--muted); cursor: pointer; transition: all 0.15s; display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 12px; }
-  .add-transcript-btn:hover { border-color: #194669; color: #194669; background: #EEF3F8; }
+  .add-transcript-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent2); }
 
   /* Submit */
   .submit-area { display: flex; align-items: center; gap: 12px; margin-top: 20px; }
-  button.primary { padding: 13px 28px; background: #194669; color: white; border: none; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; cursor: pointer; transition: all 0.15s; display: flex; align-items: center; gap: 8px; }
-  button.primary:hover { background: #1A3A5C; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(25,70,105,0.25); }
+  button.primary { padding: 14px 28px; background: var(--accent); color: white; border: none; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; cursor: pointer; transition: all 0.15s; display: flex; align-items: center; gap: 8px; }
+  button.primary:hover { background: #2d4ae0; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(61,90,241,0.3); }
   button.primary:active { transform: translateY(0); }
   button.primary:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; }
-  button.secondary { padding: 13px 20px; background: transparent; color: var(--muted); border: 1px solid var(--line); border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 14px; cursor: pointer; transition: all 0.15s; }
+  button.secondary { padding: 14px 20px; background: transparent; color: var(--muted); border: 1px solid var(--line); border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 14px; cursor: pointer; transition: all 0.15s; }
   button.secondary:hover { border-color: var(--ink); color: var(--ink); }
   .spinner { width: 18px; height: 18px; border: 2px solid rgba(255,255,255,0.3); border-top-color: white; border-radius: 50%; animation: spin 0.7s linear infinite; display: none; }
   @keyframes spin { to { transform: rotate(360deg); } }
@@ -178,7 +164,7 @@
   #result { display: none; animation: fadeIn 0.4s ease; margin-top: 28px; }
   @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
   .result-toolbar { padding: 16px 24px; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; }
-  .result-toolbar h2 { font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 400; }
+  .result-toolbar h2 { font-family: 'DM Serif Display', serif; font-size: 18px; font-weight: 400; }
   .icon-btn { padding: 7px 14px; background: var(--bg); border: 1px solid var(--line); border-radius: 6px; font-size: 12px; cursor: pointer; font-family: 'DM Sans', sans-serif; color: var(--muted); transition: all 0.15s; display: flex; align-items: center; gap: 5px; }
   .icon-btn:hover { border-color: var(--ink); color: var(--ink); }
   .badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
@@ -193,9 +179,9 @@
   .section-toggle { font-size: 16px; opacity: 0.5; transition: transform 0.2s; }
   .result-section.collapsed .section-toggle { transform: rotate(-90deg); }
   .result-section.collapsed .result-section-body { display: none; }
-  .rs-shrnuti { background: #F3EEFF; border-color: rgba(126,23,224,0.15); }
-  .rs-shrnuti .result-section-header { color: #7E17E0; }
-  .rs-kategorie { background: var(--accent2); border-color: rgba(25,70,105,0.15); }
+  .rs-shrnuti { background: var(--purple-bg); border-color: rgba(124,58,237,0.15); }
+  .rs-shrnuti .result-section-header { color: var(--purple); }
+  .rs-kategorie { background: var(--accent2); border-color: rgba(61,90,241,0.15); }
   .rs-kategorie .result-section-header { color: var(--accent); }
   .rs-varianta { background: var(--green-bg); border-color: rgba(15,158,110,0.15); }
   .rs-varianta .result-section-header { color: var(--green); }
@@ -230,41 +216,11 @@
     transition: all 0.12s;
     display: flex; align-items: center; gap: 6px;
   }
-  .kanal-pill:hover { border-color: #194669; color: #194669; background: #EEF3F8; }
-  .kanal-pill.selected { background: #194669; border-color: #194669; color: white; font-weight: 500; }
+  .kanal-pill:hover { border-color: var(--accent); color: var(--accent); background: var(--accent2); }
+  .kanal-pill.selected { background: var(--accent); border-color: var(--accent); color: white; font-weight: 500; }
   .kanal-pill .kanal-check { font-size: 11px; }
   .generate-btn-area { margin-top: 16px; display: flex; align-items: center; gap: 10px; }
   .generate-hint { font-size: 12px; color: var(--muted); }
-
-  /* Cíl sekce */
-  .goal-toggle {
-    display: flex; align-items: center; gap: 6px;
-    font-size: 11px; font-weight: 500; color: #5A7A9A;
-    cursor: pointer; margin-bottom: 12px;
-    padding: 5px 8px;
-    border: 1px solid var(--line);
-    border-radius: 6px;
-    background: var(--bg);
-    width: fit-content;
-    user-select: none;
-    transition: all 0.12s;
-  }
-  .goal-toggle:hover { border-color: var(--accent); color: var(--accent); background: var(--accent2); }
-  .goal-toggle svg { transition: transform 0.2s; flex-shrink: 0; }
-  .goal-toggle.open { color: var(--accent); border-color: var(--accent); background: var(--accent2); }
-  .goal-toggle.open svg { transform: rotate(90deg); }
-  .goal-content {
-    display: none;
-    margin-bottom: 14px;
-    padding: 10px 12px;
-    background: var(--accent2);
-    border-left: 3px solid var(--accent);
-    border-radius: 0 6px 6px 0;
-    font-size: 12px;
-    color: var(--ink2);
-    line-height: 1.6;
-  }
-  .goal-content.open { display: block; }
 
   @media (max-width: 600px) {
     header { padding: 16px 20px; }
@@ -277,7 +233,7 @@
   .pipeline-toolbar { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
   .filter-btn { padding: 6px 14px; border: 1px solid var(--line); border-radius: 20px; font-size: 12px; font-weight: 500; cursor: pointer; background: var(--white); color: var(--muted); transition: all 0.15s; font-family: "DM Sans", sans-serif; }
   .filter-btn:hover { border-color: var(--accent); color: var(--accent); }
-  .filter-btn.active { background: #194669; border-color: #194669; color: white; }
+  .filter-btn.active { background: var(--accent); border-color: var(--accent); color: white; }
   .filter-btn.f-green.active { background: var(--green); border-color: var(--green); }
   .filter-btn.f-amber.active { background: var(--amber); border-color: var(--amber); }
   .filter-btn.f-red.active { background: var(--red); border-color: var(--red); }
@@ -341,16 +297,11 @@
     <!-- Situace -->
     <div class="card" id="card-situace">
       <div class="card-header" onclick="toggleCard('situace')">
-        <h2>1. OTEVŘENÍ — KONTEXT A SITUACE</h2>
+        <h2>Otevření — kontext a situace</h2>
         <span class="framework">SPIN: Situation</span>
         <span class="card-toggle">▾</span>
       </div>
       <div class="card-body">
-        <div class="goal-toggle" onclick="toggleGoal('g-situace')">
-          <svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M9 5l7 7-7 7"/></svg>
-          Cíl sekce
-        </div>
-        <div class="goal-content" id="g-situace">Pochopit výchozí stav klienta bez hodnocení. Začít mapovat, kdo rozhoduje a jak klient měří úspěch. Fáze by měla být konverzační — sales poslouchá, nekoriguje a nevnucuje řešení.</div>
 
         <div class="question-row">
           <div class="question-text">Jak teď marketing ve firmě funguje — co děláte interně a co řešíte externě?</div>
@@ -359,8 +310,6 @@
             <div class="pill" data-val="Částečně externě">Částečně externě</div>
             <div class="pill" data-val="Vše externě">Vše externě</div>
             <div class="pill" data-val="Žádný marketing">Žádný marketing</div>
-          </div>
-          </div>
           </div>
         </div>
 
@@ -380,15 +329,6 @@
             <div class="pill" data-val="Brand a kreativa">Brand</div>
             <div class="pill" data-val="UX">UX</div>
           </div>
-            <div class="pill" data-val="Social media organické">Social organické</div>
-            <div class="pill" data-val="E-mailing">E-mailing</div>
-          </div>
-            <div class="pill" data-val="Web / CMS">Web / CMS</div>
-          </div>
-            <div class="pill" data-val="Brand a kreativa">Brand</div>
-            <div class="pill" data-val="UX">UX</div>
-          </div>
-          </div>
         </div>
 
         <div class="divider"></div>
@@ -401,10 +341,6 @@
             <div class="pill" data-val="Ne, řeší to majitel">Majitel sám</div>
             <div class="pill" data-val="Ne, nikdo">Nikdo</div>
           </div>
-            <div class="pill" data-val="Ne, řeší to majitel">Majitel sám</div>
-          </div>
-          </div>
-          </div>
         </div>
 
       </div>
@@ -413,16 +349,11 @@
     <!-- Historie -->
     <div class="card" id="card-historie">
       <div class="card-header" onclick="toggleCard('historie')">
-        <h2>2. HISTORIE S AGENTURAMI</h2>
+        <h2>Historie s agenturami</h2>
         <span class="framework">SPIN: Situation · MEDDPICC: Competition</span>
         <span class="card-toggle">▾</span>
       </div>
       <div class="card-body">
-        <div class="goal-toggle" onclick="toggleGoal('g-historie')">
-          <svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M9 5l7 7-7 7"/></svg>
-          Cíl sekce
-        </div>
-        <div class="goal-content" id="g-historie">Odhalit předchozí zkušenosti, které formují očekávání klienta. Klient, který se spálil, potřebuje víc jistoty. Klient bez agenturní zkušenosti potřebuje více edukace. Obojí zásadně ovlivňuje, jak sales variantu prezentuje na schůzce 2.</div>
 
         <div class="question-row">
           <div class="question-text">Spolupracovali jste někdy s agenturou? Co fungovalo a co ne?</div>
@@ -431,10 +362,6 @@
             <div class="pill" data-val="Ano, pozitivní zkušenost">Ano, pozitivní</div>
             <div class="pill" data-val="Ano, negativní zkušenost">Ano, negativní</div>
             <div class="pill" data-val="Ano, smíšená zkušenost">Ano, smíšená</div>
-          </div>
-          </div>
-          </div>
-          </div>
           </div>
         </div>
 
@@ -449,10 +376,6 @@
             <div class="pill" data-val="Nedostatečná odbornost">Nedostatečná odbornost</div>
             <div class="pill" data-val="Nezaznělo / neaplikuje se">Nezaznělo</div>
           </div>
-            <div class="pill" data-val="Vysoká cena">Vysoká cena</div>
-          </div>
-          </div>
-          </div>
         </div>
 
       </div>
@@ -461,16 +384,11 @@
     <!-- Problém -->
     <div class="card" id="card-problem">
       <div class="card-header" onclick="toggleCard('problem')">
-        <h2>3. PROBLÉM A BOLEST</h2>
+        <h2>Problém a bolest</h2>
         <span class="framework">SPIN: Problem, Implication · MEDDPICC: Identify Pain</span>
         <span class="card-toggle">▾</span>
       </div>
       <div class="card-body">
-        <div class="goal-toggle" onclick="toggleGoal('g-problem')">
-          <svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M9 5l7 7-7 7"/></svg>
-          Cíl sekce
-        </div>
-        <div class="goal-content" id="g-problem">Nechat klienta pojmenovat problém vlastními slovy a pochopit, co ho to reálně stojí. Čím konkrétnější dopad klient popíše, tím silnější je argumentace pro investici. Sales nekoriguje a nenabízí řešení — pouze prohlubuje pochopení problému.</div>
 
         <div class="question-row">
           <div class="question-text">Co vás přivedlo k tomu, že to řešíte právě teď?</div>
@@ -481,11 +399,6 @@
             <div class="pill" data-val="Růst firmy">Růst firmy</div>
             <div class="pill" data-val="Odchod interního člověka">Odchod interního člověka</div>
             <div class="pill" data-val="Konkurence tlačí">Konkurence tlačí</div>
-          </div>
-            <div class="pill" data-val="Konkurence tlačí">Konkurence tlačí</div>
-          </div>
-            <div class="pill" data-val="Odchod interního člověka">Odchod interního člověka</div>
-          </div>
           </div>
         </div>
 
@@ -507,9 +420,6 @@
             <div class="pill" data-val="Nevíme, co funguje">Nevíme, co funguje</div>
             <div class="pill" data-val="Rosteme pomalu">Rosteme pomalu</div>
           </div>
-            <div class="pill" data-val="Nevíme, co funguje">Nevíme, co funguje</div>
-          </div>
-          </div>
         </div>
 
       </div>
@@ -518,16 +428,11 @@
     <!-- Hodnota a cíle -->
     <div class="card" id="card-cile">
       <div class="card-header" onclick="toggleCard('cile')">
-        <h2>4. HODNOTA A CÍLE</h2>
+        <h2>Hodnota a cíle</h2>
         <span class="framework">SPIN: Need-payoff · MEDDPICC: Metrics · Jobs to be Done</span>
         <span class="card-toggle">▾</span>
       </div>
       <div class="card-body">
-        <div class="goal-toggle" onclick="toggleGoal('g-cile')">
-          <svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M9 5l7 7-7 7"/></svg>
-          Cíl sekce
-        </div>
-        <div class="goal-content" id="g-cile">Přesunout klienta od problému k hodnotě řešení — nechat ho popsat, jak vypadá úspěch. Klíčová fáze pro výběr varianty: klient, který chce rychlé výsledky, míří do Varianty A. Klient, který chce pevný základ napříč kanály, míří do Varianty B.</div>
 
         <div class="question-row">
           <div class="question-text">Jak by vypadal ideální stav za 12 měsíců?</div>
@@ -547,9 +452,6 @@
             <div class="pill" data-val="Povědomí o značce">Povědomí o značce</div>
             <div class="pill" data-val="Nemají metriky, spíš pocitově">Spíš pocitově</div>
           </div>
-          </div>
-          </div>
-          </div>
         </div>
 
         <div class="divider"></div>
@@ -561,9 +463,6 @@
             <div class="pill" data-val="Pevný základ — investuje do strategie">Pevný základ</div>
             <div class="pill" data-val="Kombinace obojího">Kombinace</div>
           </div>
-          </div>
-          </div>
-          </div>
         </div>
 
       </div>
@@ -572,16 +471,11 @@
     <!-- Interní dynamika -->
     <div class="card" id="card-dynamika">
       <div class="card-header" onclick="toggleCard('dynamika')">
-        <h2>5. INTERNÍ DYNAMIKA A PŘEKÁŽKY</h2>
+        <h2>Interní dynamika a překážky</h2>
         <span class="framework">MEDDPICC: Economic Buyer, Decision Process, Champion</span>
         <span class="card-toggle">▾</span>
       </div>
       <div class="card-body">
-        <div class="goal-toggle" onclick="toggleGoal('g-dynamika')">
-          <svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M9 5l7 7-7 7"/></svg>
-          Cíl sekce
-        </div>
-        <div class="goal-content" id="g-dynamika">Odhalit, kdo reálně rozhoduje, jak dlouho rozhodnutí trvá a jestli existuje někdo interně, kdo spolupráci podporuje nebo blokuje. Tuto fázi juniorní sales typicky přeskočí — a pak se diví, že deal uvízl.</div>
 
         <div class="question-row">
           <div class="question-text">Kdo o spolupráci rozhoduje — jste to vy, nebo je tam někdo další?</div>
@@ -590,10 +484,6 @@
             <div class="pill" data-val="Musí schválit board nebo investor">Schvaluje board</div>
             <div class="pill" data-val="Rozhodují společně více lidí">Více lidí</div>
             <div class="pill" data-val="Není jasné, kdo rozhoduje">Není jasné</div>
-          </div>
-            <div class="pill" data-val="Rozhodují společně více lidí">Více lidí</div>
-          </div>
-          </div>
           </div>
         </div>
 
@@ -607,10 +497,6 @@
             <div class="pill" data-val="Ano, rozpočtové omezení">Ano, rozpočet</div>
             <div class="pill" data-val="Nezaznělo">Nezaznělo</div>
           </div>
-            <div class="pill" data-val="Ano, rozpočtové omezení">Ano, rozpočet</div>
-          </div>
-          </div>
-          </div>
         </div>
 
       </div>
@@ -619,16 +505,11 @@
     <!-- Kvalifikace -->
     <div class="card" id="card-kvalifikace">
       <div class="card-header" onclick="toggleCard('kvalifikace')">
-        <h2>6. KVALIFIKACE A BUDGET</h2>
+        <h2>Kvalifikace a budget</h2>
         <span class="framework">MEDDPICC: Metrics, Economic Buyer, Competition, Paper Process</span>
         <span class="card-toggle">▾</span>
       </div>
       <div class="card-body">
-        <div class="goal-toggle" onclick="toggleGoal('g-kvalifikace')">
-          <svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M9 5l7 7-7 7"/></svg>
-          Cíl sekce
-        </div>
-        <div class="goal-content" id="g-kvalifikace">Ověřit, jestli má spolupráce reálnou šanci — a interně si potvrdit, do které varianty klient patří. Budget je citlivé téma, proto sales přistupuje postupně. Pokud klient budget odmítá sdělit, je to samo o sobě signál.</div>
 
         <div class="question-row">
           <div class="question-text">S jakým budgetem na marketing aktuálně pracujete?</div>
@@ -638,9 +519,6 @@
             <div class="pill" data-val="nad 100k Kč/měs. (velký klient)">nad 100k / měs.</div>
             <div class="pill" data-val="Nechtěli říct">Nechtěli říct</div>
             <div class="pill" data-val="Nezaznělo">Nezaznělo</div>
-          </div>
-          </div>
-          </div>
           </div>
         </div>
 
@@ -654,10 +532,6 @@
             <div class="pill" data-val="Zvažují interní řešení">Interní řešení</div>
             <div class="pill" data-val="Nezaznělo">Nezaznělo</div>
           </div>
-          </div>
-          </div>
-          </div>
-          </div>
         </div>
 
         <div class="divider"></div>
@@ -669,9 +543,6 @@
             <div class="pill" data-val="Do měsíce">Do měsíce</div>
             <div class="pill" data-val="Do 3 měsíců">Do 3 měsíců</div>
             <div class="pill" data-val="Není urgentní">Není urgentní</div>
-          </div>
-          </div>
-          </div>
           </div>
         </div>
 
@@ -685,10 +556,6 @@
             <div class="pill" data-val="Pomalu — potřebují více schválení">Pomalu</div>
             <div class="pill" data-val="Nezaznělo">Nezaznělo</div>
           </div>
-          </div>
-          </div>
-          </div>
-          </div>
         </div>
 
       </div>
@@ -697,16 +564,11 @@
     <!-- Poznámky -->
     <div class="card" id="card-poznamky">
       <div class="card-header" onclick="toggleCard('poznamky')">
-        <h2>7. DALŠÍ POZNÁMKY</h2>
+        <h2>Další poznámky</h2>
         <span class="framework">Cokoliv dalšího relevantního</span>
         <span class="card-toggle">▾</span>
       </div>
       <div class="card-body">
-        <div class="goal-toggle" onclick="toggleGoal('g-poznamky')">
-          <svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M9 5l7 7-7 7"/></svg>
-          Cíl sekce
-        </div>
-        <div class="goal-content" id="g-poznamky">Nastavit jasné next steps a připravit půdu pro schůzku 2. Sales by měl schůzku uzavřít s konkrétním datem — ne s „ozvu se". Klientovi říct, co dostane na schůzce 2.</div>
         <textarea class="q-input" data-key="dalsi_poznamky" placeholder="Červené vlajky, zajímavé postřehy, věci, které je třeba ověřit..." style="min-height: 100px;"></textarea>
       </div>
     </div>
@@ -793,6 +655,7 @@
 
   </div>
 
+
   <!-- TAB 3: PIPELINE -->
   <div class="tab-panel" id="panel-pipeline">
     <div class="pipeline-toolbar">
@@ -835,13 +698,6 @@
   // ── Cards collapsible ──
   function toggleCard(id) {
     document.getElementById(`card-${id}`).classList.toggle('collapsed');
-  }
-
-  function toggleGoal(id) {
-    const content = document.getElementById(id);
-    const btn = content.previousElementSibling;
-    content.classList.toggle('open');
-    btn.classList.toggle('open');
   }
 
   // ── Pills ──
