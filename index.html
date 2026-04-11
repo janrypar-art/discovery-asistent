@@ -102,6 +102,20 @@
   }
 
   /* Check pills */
+  .pill-group-section { margin-bottom: 6px; }
+  .pill-group-section:last-child { margin-bottom: 0; }
+  .pill-group-label {
+    font-size: 10px; font-weight: 600; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.5px;
+    margin-bottom: 5px; margin-top: 8px;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .pill-group-label:first-child { margin-top: 0; }
+  .pgl-positive { color: #1A5C35; }
+  .pgl-negative { color: var(--red); }
+  .pgl-warning { color: #7A4A0A; }
+  .pgl-neutral { color: var(--muted); }
+
   .pill-group { display: flex; flex-wrap: wrap; gap: 6px; }
   .pill {
     padding: 5px 12px;
@@ -354,11 +368,17 @@
 
         <div class="question-row">
           <div class="question-text">Jak teď marketing ve firmě funguje — co děláte interně a co řešíte externě?</div>
-          <div class="pill-group" data-key="marketing_setup">
+          <div data-key="marketing_setup">
+          <div class="pill-group-label pgl-neutral">— Stav</div>
+          <div class="pill-group" style="margin-bottom:6px;">
             <div class="pill" data-val="Vše interně">Vše interně</div>
             <div class="pill" data-val="Částečně externě">Částečně externě</div>
             <div class="pill" data-val="Vše externě">Vše externě</div>
+          </div>
+          <div class="pill-group-label pgl-warning">⚠ Pozor</div>
+          <div class="pill-group" style="margin-bottom:6px;">
             <div class="pill" data-val="Žádný marketing">Žádný marketing</div>
+          </div>
           </div>
         </div>
 
@@ -366,17 +386,29 @@
 
         <div class="question-row">
           <div class="question-text">Které kanály teď používáte a jak jste s nimi spokojeni?</div>
-          <div class="pill-group" data-key="kanaly">
+          <div data-key="kanaly">
+          <div class="pill-group-label pgl-neutral">— Performance</div>
+          <div class="pill-group" style="margin-bottom:6px;">
             <div class="pill" data-val="Google Ads">Google Ads</div>
             <div class="pill" data-val="Meta Ads">Meta Ads</div>
+          </div>
+          <div class="pill-group-label pgl-neutral">— Organika</div>
+          <div class="pill-group" style="margin-bottom:6px;">
             <div class="pill" data-val="SEO">SEO</div>
             <div class="pill" data-val="Social media organické">Social organické</div>
             <div class="pill" data-val="E-mailing">E-mailing</div>
+          </div>
+          <div class="pill-group-label pgl-neutral">— Základ</div>
+          <div class="pill-group" style="margin-bottom:6px;">
             <div class="pill" data-val="Analytika GA4">Analytika</div>
             <div class="pill" data-val="Web / CMS">Web / CMS</div>
+          </div>
+          <div class="pill-group-label pgl-neutral">— Strategie</div>
+          <div class="pill-group" style="margin-bottom:6px;">
             <div class="pill" data-val="Obsahová strategie">Obsah</div>
             <div class="pill" data-val="Brand a kreativa">Brand</div>
             <div class="pill" data-val="UX">UX</div>
+          </div>
           </div>
         </div>
 
@@ -384,11 +416,20 @@
 
         <div class="question-row">
           <div class="question-text">Máte interně někoho, kdo se marketingu věnuje?</div>
-          <div class="pill-group" data-key="interni_team">
+          <div data-key="interni_team">
+          <div class="pill-group-label pgl-positive">✓ Má tým</div>
+          <div class="pill-group" style="margin-bottom:6px;">
             <div class="pill" data-val="Ano, dedikovaný marketér">Dedikovaný marketér</div>
+          </div>
+          <div class="pill-group-label pgl-warning">⚠ Částečně</div>
+          <div class="pill-group" style="margin-bottom:6px;">
             <div class="pill" data-val="Ano, ale jen částečně">Částečně</div>
             <div class="pill" data-val="Ne, řeší to majitel">Majitel sám</div>
+          </div>
+          <div class="pill-group-label pgl-negative">✗ Riziko</div>
+          <div class="pill-group" style="margin-bottom:6px;">
             <div class="pill" data-val="Ne, nikdo">Nikdo</div>
+          </div>
           </div>
         </div>
 
@@ -411,11 +452,23 @@
 
         <div class="question-row">
           <div class="question-text">Spolupracovali jste někdy s agenturou? Co fungovalo a co ne?</div>
-          <div class="pill-group" data-key="agentura_zkusenost">
-            <div class="pill" data-val="Ne, první agentura">Ne, první</div>
+          <div data-key="agentura_zkusenost">
+          <div class="pill-group-label pgl-positive">✓ Pozitivní</div>
+          <div class="pill-group" style="margin-bottom:6px;">
             <div class="pill" data-val="Ano, pozitivní zkušenost">Ano, pozitivní</div>
-            <div class="pill" data-val="Ano, negativní zkušenost">Ano, negativní</div>
+          </div>
+          <div class="pill-group-label pgl-warning">⚠ Smíšená</div>
+          <div class="pill-group" style="margin-bottom:6px;">
             <div class="pill" data-val="Ano, smíšená zkušenost">Ano, smíšená</div>
+          </div>
+          <div class="pill-group-label pgl-negative">✗ Negativní — potřebují jistotu</div>
+          <div class="pill-group" style="margin-bottom:6px;">
+            <div class="pill" data-val="Ano, negativní zkušenost">Ano, negativní</div>
+          </div>
+          <div class="pill-group-label pgl-neutral">— Neutrální</div>
+          <div class="pill-group" style="margin-bottom:6px;">
+            <div class="pill" data-val="Ne, první agentura">Ne, první agentura</div>
+          </div>
           </div>
         </div>
 
@@ -423,12 +476,21 @@
 
         <div class="question-row">
           <div class="question-text">Co vás vedlo k ukončení předchozí spolupráce?</div>
-          <div class="pill-group" data-key="duvod_ukonceni">
+          <div data-key="duvod_ukonceni">
+          <div class="pill-group-label pgl-negative">✗ Výkonnostní</div>
+          <div class="pill-group" style="margin-bottom:6px;">
             <div class="pill" data-val="Špatné výsledky">Špatné výsledky</div>
+            <div class="pill" data-val="Nedostatečná odbornost">Nedostatečná odbornost</div>
+          </div>
+          <div class="pill-group-label pgl-warning">⚠ Procesní</div>
+          <div class="pill-group" style="margin-bottom:6px;">
             <div class="pill" data-val="Špatná komunikace">Špatná komunikace</div>
             <div class="pill" data-val="Vysoká cena">Vysoká cena</div>
-            <div class="pill" data-val="Nedostatečná odbornost">Nedostatečná odbornost</div>
+          </div>
+          <div class="pill-group-label pgl-neutral">— Neutrální</div>
+          <div class="pill-group" style="margin-bottom:6px;">
             <div class="pill" data-val="Nezaznělo / neaplikuje se">Nezaznělo</div>
+          </div>
           </div>
         </div>
 
@@ -451,13 +513,22 @@
 
         <div class="question-row">
           <div class="question-text">Co vás přivedlo k tomu, že to řešíte právě teď?</div>
-          <div class="pill-group" data-key="spoustec">
-            <div class="pill" data-val="Špatné výsledky stávajícího marketingu">Špatné výsledky</div>
+          <div data-key="spoustec">
+          <div class="pill-group-label pgl-positive">✓ Příležitost — silná urgentnost</div>
+          <div class="pill-group" style="margin-bottom:6px;">
             <div class="pill" data-val="Nový produkt nebo služba">Nový produkt</div>
-            <div class="pill" data-val="Sezónní tlak">Sezónní tlak</div>
             <div class="pill" data-val="Růst firmy">Růst firmy</div>
-            <div class="pill" data-val="Odchod interního člověka">Odchod interního člověka</div>
+          </div>
+          <div class="pill-group-label pgl-warning">⚠ Tlak — střední urgentnost</div>
+          <div class="pill-group" style="margin-bottom:6px;">
+            <div class="pill" data-val="Sezónní tlak">Sezónní tlak</div>
             <div class="pill" data-val="Konkurence tlačí">Konkurence tlačí</div>
+          </div>
+          <div class="pill-group-label pgl-negative">✗ Problém — vysoká urgentnost</div>
+          <div class="pill-group" style="margin-bottom:6px;">
+            <div class="pill" data-val="Špatné výsledky stávajícího marketingu">Špatné výsledky</div>
+            <div class="pill" data-val="Odchod interního člověka">Odchod interního člověka</div>
+          </div>
           </div>
         </div>
 
@@ -472,12 +543,18 @@
 
         <div class="question-row">
           <div class="question-text">Jak vás to teď reálně brzdí — obchodně, časově, kapacitně?</div>
-          <div class="pill-group" data-key="dopad">
+          <div data-key="dopad">
+          <div class="pill-group-label pgl-negative">✗ Obchodní dopad</div>
+          <div class="pill-group" style="margin-bottom:6px;">
             <div class="pill" data-val="Ztrácíme potenciální zákazníky">Ztrácíme zákazníky</div>
             <div class="pill" data-val="Plýtváme budgetem">Plýtváme budgetem</div>
+            <div class="pill" data-val="Rosteme pomalu">Rosteme pomalu</div>
+          </div>
+          <div class="pill-group-label pgl-warning">⚠ Provozní dopad</div>
+          <div class="pill-group" style="margin-bottom:6px;">
             <div class="pill" data-val="Chybí kapacita interně">Chybí kapacita</div>
             <div class="pill" data-val="Nevíme, co funguje">Nevíme, co funguje</div>
-            <div class="pill" data-val="Rosteme pomalu">Rosteme pomalu</div>
+          </div>
           </div>
         </div>
 
@@ -507,14 +584,23 @@
 
         <div class="question-row">
           <div class="question-text">Máte konkrétní metriku, které chcete dosáhnout?</div>
-          <div class="pill-group" data-key="metriky">
+          <div data-key="metriky">
+          <div class="pill-group-label pgl-positive">✓ Jasné metriky — měřitelné</div>
+          <div class="pill-group" style="margin-bottom:6px;">
             <div class="pill" data-val="Obrat / GMV">Obrat</div>
             <div class="pill" data-val="Počet leadů">Počet leadů</div>
             <div class="pill" data-val="ROAS">ROAS</div>
             <div class="pill" data-val="Organická návštěvnost">Organická návštěvnost</div>
             <div class="pill" data-val="Konverzní poměr">Konverzní poměr</div>
+          </div>
+          <div class="pill-group-label pgl-warning">⚠ Obtížně měřitelné</div>
+          <div class="pill-group" style="margin-bottom:6px;">
             <div class="pill" data-val="Povědomí o značce">Povědomí o značce</div>
+          </div>
+          <div class="pill-group-label pgl-negative">✗ Riziko — analytika pravděpodobně chybí</div>
+          <div class="pill-group" style="margin-bottom:6px;">
             <div class="pill" data-val="Nemají metriky, spíš pocitově">Spíš pocitově</div>
+          </div>
           </div>
         </div>
 
@@ -522,10 +608,19 @@
 
         <div class="question-row">
           <div class="question-text">Co je pro vás důležitější — rychlé výsledky, nebo pevný základ do budoucna?</div>
-          <div class="pill-group" data-key="priorita_pristupu">
+          <div data-key="priorita_pristupu">
+          <div class="pill-group-label pgl-warning">→ Varianta A</div>
+          <div class="pill-group" style="margin-bottom:6px;">
             <div class="pill" data-val="Rychlé výsledky — chce okamžitý dopad">Rychlé výsledky</div>
+          </div>
+          <div class="pill-group-label pgl-positive">→ Varianta B</div>
+          <div class="pill-group" style="margin-bottom:6px;">
             <div class="pill" data-val="Pevný základ — investuje do strategie">Pevný základ</div>
+          </div>
+          <div class="pill-group-label pgl-neutral">— Upřesnit na schůzce 2</div>
+          <div class="pill-group" style="margin-bottom:6px;">
             <div class="pill" data-val="Kombinace obojího">Kombinace</div>
+          </div>
           </div>
         </div>
 
@@ -548,11 +643,20 @@
 
         <div class="question-row">
           <div class="question-text">Kdo o spolupráci rozhoduje — jste to vy, nebo je tam někdo další?</div>
-          <div class="pill-group" data-key="rozhodovatel">
+          <div data-key="rozhodovatel">
+          <div class="pill-group-label pgl-positive">✓ Jasný rozhodovatel</div>
+          <div class="pill-group" style="margin-bottom:6px;">
             <div class="pill" data-val="Rozhoduje sám — majitel nebo ředitel">Rozhoduje sám</div>
+          </div>
+          <div class="pill-group-label pgl-warning">⚠ Delší proces</div>
+          <div class="pill-group" style="margin-bottom:6px;">
             <div class="pill" data-val="Musí schválit board nebo investor">Schvaluje board</div>
             <div class="pill" data-val="Rozhodují společně více lidí">Více lidí</div>
+          </div>
+          <div class="pill-group-label pgl-negative">✗ Riziko — zjistit kdo rozhoduje</div>
+          <div class="pill-group" style="margin-bottom:6px;">
             <div class="pill" data-val="Není jasné, kdo rozhoduje">Není jasné</div>
+          </div>
           </div>
         </div>
 
@@ -560,11 +664,20 @@
 
         <div class="question-row">
           <div class="question-text">Je ve firmě někdo, kdo by mohl mít k externí spolupráci výhrady?</div>
-          <div class="pill-group" data-key="blokator">
+          <div data-key="blokator">
+          <div class="pill-group-label pgl-positive">✓ Žádný blokátor</div>
+          <div class="pill-group" style="margin-bottom:6px;">
             <div class="pill" data-val="Ne, všichni jsou pro">Ne, všichni pro</div>
+          </div>
+          <div class="pill-group-label pgl-negative">✗ Blokátor identifikován</div>
+          <div class="pill-group" style="margin-bottom:6px;">
             <div class="pill" data-val="Ano, interní odpor ke změně">Ano, odpor ke změně</div>
             <div class="pill" data-val="Ano, rozpočtové omezení">Ano, rozpočet</div>
+          </div>
+          <div class="pill-group-label pgl-neutral">— Neutrální</div>
+          <div class="pill-group" style="margin-bottom:6px;">
             <div class="pill" data-val="Nezaznělo">Nezaznělo</div>
+          </div>
           </div>
         </div>
 
@@ -587,12 +700,21 @@
 
         <div class="question-row">
           <div class="question-text">S jakým budgetem na marketing aktuálně pracujete?</div>
-          <div class="pill-group" data-key="budget">
-            <div class="pill" data-val="do 40k Kč/měs. (malý klient)">do 40k / měs.</div>
-            <div class="pill" data-val="40–100k Kč/měs. (střední klient)">40–100k / měs.</div>
-            <div class="pill" data-val="nad 100k Kč/měs. (velký klient)">nad 100k / měs.</div>
+          <div data-key="budget">
+          <div class="pill-group-label pgl-positive">✓ Jasný budget</div>
+          <div class="pill-group" style="margin-bottom:6px;">
+            <div class="pill" data-val="do 40k Kč/měs. (malý klient)">do 40k / měs. → Malý</div>
+            <div class="pill" data-val="40–100k Kč/měs. (střední klient)">40–100k / měs. → Střední</div>
+            <div class="pill" data-val="nad 100k Kč/měs. (velký klient)">nad 100k / měs. → Velký</div>
+          </div>
+          <div class="pill-group-label pgl-negative">✗ Signál — možná není Economic Buyer</div>
+          <div class="pill-group" style="margin-bottom:6px;">
             <div class="pill" data-val="Nechtěli říct">Nechtěli říct</div>
+          </div>
+          <div class="pill-group-label pgl-neutral">— Neutrální</div>
+          <div class="pill-group" style="margin-bottom:6px;">
             <div class="pill" data-val="Nezaznělo">Nezaznělo</div>
+          </div>
           </div>
         </div>
 
@@ -600,11 +722,23 @@
 
         <div class="question-row">
           <div class="question-text">Mluvíte ještě s někým dalším, nebo hledáte aktivně alternativy?</div>
-          <div class="pill-group" data-key="konkurence">
+          <div data-key="konkurence">
+          <div class="pill-group-label pgl-positive">✓ Preferují nás</div>
+          <div class="pill-group" style="margin-bottom:6px;">
             <div class="pill" data-val="Ne, oslovili jen nás">Jen my</div>
+          </div>
+          <div class="pill-group-label pgl-warning">⚠ Srovnávají</div>
+          <div class="pill-group" style="margin-bottom:6px;">
             <div class="pill" data-val="Ano, oslovili více agentur">Více agentur</div>
+          </div>
+          <div class="pill-group-label pgl-negative">✗ Riziko — zvažují obejít agenturu</div>
+          <div class="pill-group" style="margin-bottom:6px;">
             <div class="pill" data-val="Zvažují interní řešení">Interní řešení</div>
+          </div>
+          <div class="pill-group-label pgl-neutral">— Neutrální</div>
+          <div class="pill-group" style="margin-bottom:6px;">
             <div class="pill" data-val="Nezaznělo">Nezaznělo</div>
+          </div>
           </div>
         </div>
 
@@ -612,11 +746,20 @@
 
         <div class="question-row">
           <div class="question-text">Jak rychle byste chtěli začít?</div>
-          <div class="pill-group" data-key="urgentnost">
+          <div data-key="urgentnost">
+          <div class="pill-group-label pgl-positive">✓ Vysoká urgentnost</div>
+          <div class="pill-group" style="margin-bottom:6px;">
             <div class="pill" data-val="Okamžitě — co nejdříve">Okamžitě</div>
             <div class="pill" data-val="Do měsíce">Do měsíce</div>
+          </div>
+          <div class="pill-group-label pgl-warning">⚠ Střední urgentnost</div>
+          <div class="pill-group" style="margin-bottom:6px;">
             <div class="pill" data-val="Do 3 měsíců">Do 3 měsíců</div>
+          </div>
+          <div class="pill-group-label pgl-negative">✗ Nízká urgentnost</div>
+          <div class="pill-group" style="margin-bottom:6px;">
             <div class="pill" data-val="Není urgentní">Není urgentní</div>
+          </div>
           </div>
         </div>
 
@@ -624,11 +767,23 @@
 
         <div class="question-row">
           <div class="question-text">Jak takové rozhodnutí u vás typicky probíhá?</div>
-          <div class="pill-group" data-key="rozhodovaci_proces">
+          <div data-key="rozhodovaci_proces">
+          <div class="pill-group-label pgl-positive">✓ Rychlý proces</div>
+          <div class="pill-group" style="margin-bottom:6px;">
             <div class="pill" data-val="Rychle — rozhodne se do týdne">Rychle</div>
+          </div>
+          <div class="pill-group-label pgl-warning">⚠ Standardní</div>
+          <div class="pill-group" style="margin-bottom:6px;">
             <div class="pill" data-val="Standardně — 2–4 týdny">Standardně</div>
+          </div>
+          <div class="pill-group-label pgl-negative">✗ Pomalý — riziko uvíznutí dealu</div>
+          <div class="pill-group" style="margin-bottom:6px;">
             <div class="pill" data-val="Pomalu — potřebují více schválení">Pomalu</div>
+          </div>
+          <div class="pill-group-label pgl-neutral">— Neutrální</div>
+          <div class="pill-group" style="margin-bottom:6px;">
             <div class="pill" data-val="Nezaznělo">Nezaznělo</div>
+          </div>
           </div>
         </div>
 
@@ -787,12 +942,10 @@
   }
 
   // ── Pills ──
-  document.querySelectorAll('.pill-group').forEach(group => {
-    group.querySelectorAll('.pill').forEach(pill => {
-      pill.addEventListener('click', () => {
-        pill.classList.toggle('on');
-        updateQuestionBadge();
-      });
+  document.querySelectorAll('.pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      pill.classList.toggle('on');
+      updateQuestionBadge();
     });
   });
 
@@ -810,8 +963,10 @@
 
   function getQuestionData() {
     const result = {};
-    document.querySelectorAll('.pill-group').forEach(group => {
+    // Support both .pill-group[data-key] and div[data-key] wrappers
+    document.querySelectorAll('[data-key]').forEach(group => {
       const key = group.dataset.key;
+      if (!key) return;
       const selected = Array.from(group.querySelectorAll('.pill.on')).map(p => p.dataset.val);
       if (selected.length) result[key] = selected;
     });
