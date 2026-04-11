@@ -16,10 +16,10 @@
     --white: #ffffff;       /* Pure White */
     --accent: #194669;      /* Navy as primary accent */
     --accent2: #EEF3F8;     /* Light navy bg */
-    --green: #194669;       /* Navy for positive */
-    --green-bg: #EBF4F9;    /* Light blue positive bg */
-    --amber: #194669;       /* Navy for amber elements */
-    --amber-bg: #E8F0F8;    /* Light blue amber bg */
+    --green: #0f9e6e;       /* Green for positive */
+    --green-bg: #e8f8f2;    /* Light green bg */
+    --amber: #c47a15;       /* Amber for warnings */
+    --amber-bg: #fdf3e3;    /* Light amber bg */
     --red: #C0392B;         /* Keep red for errors/problems */
     --red-bg: #FDEDF0;
     --purple: #7E17E0;      /* Electric Violet */
@@ -77,7 +77,7 @@
   /* Cards */
   .card { background: var(--white); border-radius: var(--radius); border: 1px solid var(--line); box-shadow: var(--shadow); overflow: hidden; margin-bottom: 16px; }
   .card-header { padding: 14px 20px; border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 10px; cursor: pointer; user-select: none; }
-  .card-header h2 { font-family: 'DM Serif Display', serif; font-size: 15px; font-weight: 400; color: var(--ink); flex: 1; }
+  .card-header h2 { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 600; color: var(--ink); flex: 1; letter-spacing: 0.6px; }
   .card-header .framework { font-size: 11px; color: var(--muted); font-style: italic; }
   .card-toggle { font-size: 14px; color: var(--muted); transition: transform 0.2s; }
   .card.collapsed .card-toggle { transform: rotate(-90deg); }
@@ -195,8 +195,8 @@
   .result-section.collapsed .result-section-body { display: none; }
   .rs-shrnuti { background: #F3EEFF; border-color: rgba(126,23,224,0.15); }
   .rs-shrnuti .result-section-header { color: #7E17E0; }
-  .rs-kategorie { background: #EEF3F8; border-color: rgba(25,70,105,0.15); }
-  .rs-kategorie .result-section-header { color: #194669; }
+  .rs-kategorie { background: var(--accent2); border-color: rgba(25,70,105,0.15); }
+  .rs-kategorie .result-section-header { color: var(--accent); }
   .rs-varianta { background: var(--green-bg); border-color: rgba(15,158,110,0.15); }
   .rs-varianta .result-section-header { color: var(--green); }
   .rs-priorita { background: var(--amber-bg); border-color: rgba(196,122,21,0.15); }
@@ -341,7 +341,7 @@
     <!-- Situace -->
     <div class="card" id="card-situace">
       <div class="card-header" onclick="toggleCard('situace')">
-        <h2>Otevření — kontext a situace</h2>
+        <h2>1. OTEVŘENÍ — KONTEXT A SITUACE</h2>
         <span class="framework">SPIN: Situation</span>
         <span class="card-toggle">▾</span>
       </div>
@@ -359,6 +359,8 @@
             <div class="pill" data-val="Částečně externě">Částečně externě</div>
             <div class="pill" data-val="Vše externě">Vše externě</div>
             <div class="pill" data-val="Žádný marketing">Žádný marketing</div>
+          </div>
+          </div>
           </div>
         </div>
 
@@ -378,6 +380,15 @@
             <div class="pill" data-val="Brand a kreativa">Brand</div>
             <div class="pill" data-val="UX">UX</div>
           </div>
+            <div class="pill" data-val="Social media organické">Social organické</div>
+            <div class="pill" data-val="E-mailing">E-mailing</div>
+          </div>
+            <div class="pill" data-val="Web / CMS">Web / CMS</div>
+          </div>
+            <div class="pill" data-val="Brand a kreativa">Brand</div>
+            <div class="pill" data-val="UX">UX</div>
+          </div>
+          </div>
         </div>
 
         <div class="divider"></div>
@@ -390,6 +401,10 @@
             <div class="pill" data-val="Ne, řeší to majitel">Majitel sám</div>
             <div class="pill" data-val="Ne, nikdo">Nikdo</div>
           </div>
+            <div class="pill" data-val="Ne, řeší to majitel">Majitel sám</div>
+          </div>
+          </div>
+          </div>
         </div>
 
       </div>
@@ -398,7 +413,7 @@
     <!-- Historie -->
     <div class="card" id="card-historie">
       <div class="card-header" onclick="toggleCard('historie')">
-        <h2>Historie s agenturami</h2>
+        <h2>2. HISTORIE S AGENTURAMI</h2>
         <span class="framework">SPIN: Situation · MEDDPICC: Competition</span>
         <span class="card-toggle">▾</span>
       </div>
@@ -417,6 +432,10 @@
             <div class="pill" data-val="Ano, negativní zkušenost">Ano, negativní</div>
             <div class="pill" data-val="Ano, smíšená zkušenost">Ano, smíšená</div>
           </div>
+          </div>
+          </div>
+          </div>
+          </div>
         </div>
 
         <div class="divider"></div>
@@ -430,6 +449,10 @@
             <div class="pill" data-val="Nedostatečná odbornost">Nedostatečná odbornost</div>
             <div class="pill" data-val="Nezaznělo / neaplikuje se">Nezaznělo</div>
           </div>
+            <div class="pill" data-val="Vysoká cena">Vysoká cena</div>
+          </div>
+          </div>
+          </div>
         </div>
 
       </div>
@@ -438,7 +461,7 @@
     <!-- Problém -->
     <div class="card" id="card-problem">
       <div class="card-header" onclick="toggleCard('problem')">
-        <h2>Problém a bolest</h2>
+        <h2>3. PROBLÉM A BOLEST</h2>
         <span class="framework">SPIN: Problem, Implication · MEDDPICC: Identify Pain</span>
         <span class="card-toggle">▾</span>
       </div>
@@ -458,6 +481,11 @@
             <div class="pill" data-val="Růst firmy">Růst firmy</div>
             <div class="pill" data-val="Odchod interního člověka">Odchod interního člověka</div>
             <div class="pill" data-val="Konkurence tlačí">Konkurence tlačí</div>
+          </div>
+            <div class="pill" data-val="Konkurence tlačí">Konkurence tlačí</div>
+          </div>
+            <div class="pill" data-val="Odchod interního člověka">Odchod interního člověka</div>
+          </div>
           </div>
         </div>
 
@@ -479,6 +507,9 @@
             <div class="pill" data-val="Nevíme, co funguje">Nevíme, co funguje</div>
             <div class="pill" data-val="Rosteme pomalu">Rosteme pomalu</div>
           </div>
+            <div class="pill" data-val="Nevíme, co funguje">Nevíme, co funguje</div>
+          </div>
+          </div>
         </div>
 
       </div>
@@ -487,7 +518,7 @@
     <!-- Hodnota a cíle -->
     <div class="card" id="card-cile">
       <div class="card-header" onclick="toggleCard('cile')">
-        <h2>Hodnota a cíle</h2>
+        <h2>4. HODNOTA A CÍLE</h2>
         <span class="framework">SPIN: Need-payoff · MEDDPICC: Metrics · Jobs to be Done</span>
         <span class="card-toggle">▾</span>
       </div>
@@ -516,6 +547,9 @@
             <div class="pill" data-val="Povědomí o značce">Povědomí o značce</div>
             <div class="pill" data-val="Nemají metriky, spíš pocitově">Spíš pocitově</div>
           </div>
+          </div>
+          </div>
+          </div>
         </div>
 
         <div class="divider"></div>
@@ -527,6 +561,9 @@
             <div class="pill" data-val="Pevný základ — investuje do strategie">Pevný základ</div>
             <div class="pill" data-val="Kombinace obojího">Kombinace</div>
           </div>
+          </div>
+          </div>
+          </div>
         </div>
 
       </div>
@@ -535,7 +572,7 @@
     <!-- Interní dynamika -->
     <div class="card" id="card-dynamika">
       <div class="card-header" onclick="toggleCard('dynamika')">
-        <h2>Interní dynamika a překážky</h2>
+        <h2>5. INTERNÍ DYNAMIKA A PŘEKÁŽKY</h2>
         <span class="framework">MEDDPICC: Economic Buyer, Decision Process, Champion</span>
         <span class="card-toggle">▾</span>
       </div>
@@ -554,6 +591,10 @@
             <div class="pill" data-val="Rozhodují společně více lidí">Více lidí</div>
             <div class="pill" data-val="Není jasné, kdo rozhoduje">Není jasné</div>
           </div>
+            <div class="pill" data-val="Rozhodují společně více lidí">Více lidí</div>
+          </div>
+          </div>
+          </div>
         </div>
 
         <div class="divider"></div>
@@ -566,6 +607,10 @@
             <div class="pill" data-val="Ano, rozpočtové omezení">Ano, rozpočet</div>
             <div class="pill" data-val="Nezaznělo">Nezaznělo</div>
           </div>
+            <div class="pill" data-val="Ano, rozpočtové omezení">Ano, rozpočet</div>
+          </div>
+          </div>
+          </div>
         </div>
 
       </div>
@@ -574,7 +619,7 @@
     <!-- Kvalifikace -->
     <div class="card" id="card-kvalifikace">
       <div class="card-header" onclick="toggleCard('kvalifikace')">
-        <h2>Kvalifikace a budget</h2>
+        <h2>6. KVALIFIKACE A BUDGET</h2>
         <span class="framework">MEDDPICC: Metrics, Economic Buyer, Competition, Paper Process</span>
         <span class="card-toggle">▾</span>
       </div>
@@ -594,6 +639,9 @@
             <div class="pill" data-val="Nechtěli říct">Nechtěli říct</div>
             <div class="pill" data-val="Nezaznělo">Nezaznělo</div>
           </div>
+          </div>
+          </div>
+          </div>
         </div>
 
         <div class="divider"></div>
@@ -605,6 +653,10 @@
             <div class="pill" data-val="Ano, oslovili více agentur">Více agentur</div>
             <div class="pill" data-val="Zvažují interní řešení">Interní řešení</div>
             <div class="pill" data-val="Nezaznělo">Nezaznělo</div>
+          </div>
+          </div>
+          </div>
+          </div>
           </div>
         </div>
 
@@ -618,6 +670,9 @@
             <div class="pill" data-val="Do 3 měsíců">Do 3 měsíců</div>
             <div class="pill" data-val="Není urgentní">Není urgentní</div>
           </div>
+          </div>
+          </div>
+          </div>
         </div>
 
         <div class="divider"></div>
@@ -630,6 +685,10 @@
             <div class="pill" data-val="Pomalu — potřebují více schválení">Pomalu</div>
             <div class="pill" data-val="Nezaznělo">Nezaznělo</div>
           </div>
+          </div>
+          </div>
+          </div>
+          </div>
         </div>
 
       </div>
@@ -638,7 +697,7 @@
     <!-- Poznámky -->
     <div class="card" id="card-poznamky">
       <div class="card-header" onclick="toggleCard('poznamky')">
-        <h2>Další poznámky</h2>
+        <h2>7. DALŠÍ POZNÁMKY</h2>
         <span class="framework">Cokoliv dalšího relevantního</span>
         <span class="card-toggle">▾</span>
       </div>
@@ -733,7 +792,6 @@
     </div>
 
   </div>
-
 
   <!-- TAB 3: PIPELINE -->
   <div class="tab-panel" id="panel-pipeline">
