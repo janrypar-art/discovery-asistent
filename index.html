@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Discovery Asistent</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
     /* Four Bros Brand Colors */
@@ -28,10 +28,10 @@
     --shadow: 0 2px 16px rgba(25,70,105,0.08);
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Roboto', sans-serif; background: var(--bg); color: var(--ink); min-height: 100vh; font-size: 15px; line-height: 1.6; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--ink); min-height: 100vh; font-size: 15px; line-height: 1.6; }
 
   header { background: #194669; padding: 18px 40px; display: flex; align-items: center; gap: 16px; border-bottom: 3px solid #7E17E0; }
-  header h1 { font-family: 'Roboto', sans-serif; color: var(--white); font-size: 20px; font-weight: 300; letter-spacing: 1px; text-transform: uppercase; }
+  header h1 { font-family: 'DM Serif Display', serif; color: var(--white); font-size: 22px; font-weight: 400; letter-spacing: -0.3px; }
   header span { font-size: 12px; color: rgba(255,255,255,0.4); font-weight: 300; margin-left: auto; }
   .dot { width: 8px; height: 8px; background: #7E17E0; border-radius: 50%; flex-shrink: 0; }
 
@@ -77,7 +77,7 @@
   /* Cards */
   .card { background: var(--white); border-radius: var(--radius); border: 1px solid var(--line); box-shadow: var(--shadow); overflow: hidden; margin-bottom: 16px; }
   .card-header { padding: 14px 20px; border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 10px; cursor: pointer; user-select: none; }
-  .card-header h2 { font-family: 'Roboto', sans-serif; font-size: 15px; font-weight: 400; color: var(--ink); flex: 1; }
+  .card-header h2 { font-family: 'DM Serif Display', serif; font-size: 15px; font-weight: 400; color: var(--ink); flex: 1; }
   .card-header .framework { font-size: 11px; color: var(--muted); font-style: italic; }
   .card-toggle { font-size: 14px; color: var(--muted); transition: transform 0.2s; }
   .card.collapsed .card-toggle { transform: rotate(-90deg); }
@@ -164,11 +164,11 @@
 
   /* Submit */
   .submit-area { display: flex; align-items: center; gap: 12px; margin-top: 20px; }
-  button.primary { padding: 13px 28px; background: #194669; color: white; border: none; border-radius: 6px; font-family: 'Roboto', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.15s; display: flex; align-items: center; gap: 8px; letter-spacing: 0.3px; }
+  button.primary { padding: 13px 28px; background: #194669; color: white; border: none; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; cursor: pointer; transition: all 0.15s; display: flex; align-items: center; gap: 8px; }
   button.primary:hover { background: #1A3A5C; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(25,70,105,0.25); }
   button.primary:active { transform: translateY(0); }
   button.primary:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; }
-  button.secondary { padding: 13px 20px; background: transparent; color: var(--muted); border: 1px solid var(--line); border-radius: 6px; font-family: 'Roboto', sans-serif; font-size: 14px; cursor: pointer; transition: all 0.15s; }
+  button.secondary { padding: 13px 20px; background: transparent; color: var(--muted); border: 1px solid var(--line); border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 14px; cursor: pointer; transition: all 0.15s; }
   button.secondary:hover { border-color: var(--ink); color: var(--ink); }
   .spinner { width: 18px; height: 18px; border: 2px solid rgba(255,255,255,0.3); border-top-color: white; border-radius: 50%; animation: spin 0.7s linear infinite; display: none; }
   @keyframes spin { to { transform: rotate(360deg); } }
@@ -178,7 +178,7 @@
   #result { display: none; animation: fadeIn 0.4s ease; margin-top: 28px; }
   @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
   .result-toolbar { padding: 16px 24px; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; }
-  .result-toolbar h2 { font-family: 'Roboto', sans-serif; font-size: 18px; font-weight: 400; }
+  .result-toolbar h2 { font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 400; }
   .icon-btn { padding: 7px 14px; background: var(--bg); border: 1px solid var(--line); border-radius: 6px; font-size: 12px; cursor: pointer; font-family: 'DM Sans', sans-serif; color: var(--muted); transition: all 0.15s; display: flex; align-items: center; gap: 5px; }
   .icon-btn:hover { border-color: var(--ink); color: var(--ink); }
   .badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
@@ -258,7 +258,7 @@
   .client-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 20px; margin-bottom: 12px; cursor: pointer; transition: all 0.15s; position: relative; }
   .client-card:hover { border-color: var(--accent); box-shadow: var(--shadow); }
   .client-card-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
-  .client-card-name { font-family: "Roboto", sans-serif; font-size: 16px; font-weight: 400; color: var(--ink); flex: 1; }
+  .client-card-name { font-family: "DM Serif Display", serif; font-size: 16px; font-weight: 400; color: var(--ink); flex: 1; }
   .client-card-date { font-size: 11px; color: var(--muted); white-space: nowrap; margin-top: 3px; }
   .client-card-badges { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
   .client-card-next { font-size: 13px; color: var(--ink2); line-height: 1.5; border-top: 1px solid var(--line); padding-top: 10px; margin-top: 4px; }
@@ -271,7 +271,7 @@
   .detail-overlay.show { display: flex; }
   .detail-modal { background: var(--white); border-radius: var(--radius); max-width: 640px; width: 100%; max-height: 80vh; overflow-y: auto; box-shadow: 0 8px 40px rgba(30,30,60,0.2); }
   .detail-modal-header { padding: 20px 24px; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; background: var(--white); }
-  .detail-modal-header h2 { font-family: "Roboto", sans-serif; font-size: 18px; font-weight: 400; }
+  .detail-modal-header h2 { font-family: "DM Serif Display", serif; font-size: 18px; font-weight: 400; }
   .detail-modal-close { width: 28px; height: 28px; background: var(--bg); border: 1px solid var(--line); border-radius: 6px; cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center; color: var(--muted); transition: all 0.15s; }
   .detail-modal-close:hover { border-color: var(--red); color: var(--red); }
   .detail-modal-body { padding: 20px 24px; }
