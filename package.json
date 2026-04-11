@@ -1,1 +1,1 @@
-{"name":"discovery-asistent","version":"1.0.0","dependencies":{"docx":"9.5.3"}}
+{"name":"discovery-asistent","version":"1.0.0","type":"module","dependencies":{"docx":"9.5.3"}}
